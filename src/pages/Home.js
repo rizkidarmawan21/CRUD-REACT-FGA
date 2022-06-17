@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { BASEURL } from '../Url/baseUrl';
 
 const Home = () => {
-    const BASEURL = 'https://siudin-as.000webhostapp.com/api/contact' 
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [contacts, setContact] = useState([]);
@@ -29,8 +30,7 @@ const Home = () => {
             name: name,
             phone: phone
         }
-        axios.post(
-            BASEURL, data).then((response) => {
+        axios.post(BASEURL, data).then((response) => {
                 alert(response.data.meta.message);
                 window.location.reload();
             })
@@ -42,7 +42,7 @@ const Home = () => {
     function handleDelete(id) {
         const confirm = window.confirm('Are you sure to delete this contact?');
         if (confirm) {
-            axios.delete(BASEURL+'/' + id)
+            axios.delete(BASEURL + '/' + id)
             .then((response) => {
                 alert(response.data.meta.message);
                 window.location.reload();
@@ -51,7 +51,6 @@ const Home = () => {
             })
         }
     }
-
     return (
         <div className="w-full">
             <h1 className="text-center my-3 text-[30px] font-bold">Aplikasi Penyimpanan Kontak</h1>
@@ -60,7 +59,7 @@ const Home = () => {
                     <label className="block">
                         <span className="block text-sm font-medium text-slate-700">Nama</span>
 
-                        <input type="text" value={name} onChange={(e) => { handleNameChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        <input placeholder='Masukkan nama' type="text" value={name} onChange={(e) => { handleNameChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                     invalid:border-pink-500 invalid:text-pink-600
                     focus:invalid:border-pink-500 focus:invalid:ring-pink-500
@@ -69,7 +68,7 @@ const Home = () => {
                     <label className="block mt-2">
                         <span className="block text-sm font-medium text-slate-700">Nomor</span>
 
-                        <input type="number" value={phone} onChange={(e) => { handlePhoneChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        <input placeholder='Masukkan nomor hp' type="number" value={phone} onChange={(e) => { handlePhoneChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                     invalid:border-pink-500 invalid:text-pink-600
                     focus:invalid:border-pink-500 focus:invalid:ring-pink-500
@@ -104,10 +103,10 @@ const Home = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {contacts.map((contact) => {
+                                        {contacts.map((contact,index) => {
                                             return (
                                                 <tr className="border-b" key={contact.id}>
-                                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{contact.id}</td>
+                                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{1 + index}</td>
                                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                         {contact.name}
                                                     </td>
@@ -115,9 +114,9 @@ const Home = () => {
                                                         {contact.phone}
                                                     </td>
                                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                        <button className="text-white bg-yellow-500 px-3 py-1 rounded-full hover:text-gray-900 mr-3">
+                                                        <Link to={"/edit/"+contact.id} className="text-white bg-yellow-500 px-3 py-1 rounded-full hover:text-gray-900 mr-3">
                                                             Edit
-                                                        </button>
+                                                        </Link>
                                                         <button onClick={() => { handleDelete(contact.id) }} className="text-white bg-red-500 px-3 py-1 rounded-full hover:text-gray-900">
                                                             Delete
                                                         </button>

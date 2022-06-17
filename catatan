@@ -1,0 +1,4 @@
+npm i react-router-dom 
+untuk mengkrontol routing atau url agar dapat berpindah dari satu halaman ke halaman lain
+
+dengan ini memungkinkan halaman berpindah secara cepat (tanpa reload)
