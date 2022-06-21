@@ -1,3 +1,13 @@
+![image](https://user-images.githubusercontent.com/80609220/174349982-84f03d60-e3c0-4301-a8c1-2ddd2d62d218.png)
+![image](https://user-images.githubusercontent.com/80609220/174350050-f100f49f-dbc3-4d5a-b582-d6a1384b4784.png)
+![image](https://user-images.githubusercontent.com/80609220/174350084-fade5101-3afe-4c29-a36b-37e9dab05934.png)
+
+
+
+
+# API Documentation 
+Postman = ( https://documenter.getpostman.com/view/16238459/UzBiQoxZ ) 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
