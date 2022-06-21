@@ -53,13 +53,13 @@ const Home = () => {
     }
     return (
         <div className="w-full">
-            <h1 className="text-center my-3 text-[30px] font-bold">Aplikasi Penyimpanan Kontak</h1>
+            <h1 className="text-center my-3 text-[30px] font-bold">Aplikasi Todo List</h1>
             <div className="lg:w-1/2 sm:w-full w-full border border-slate-200 rounded-xl mx-auto shadow-md font-inter p-5">
                 <form onSubmit={(e) => { handleSubmit(e) }}>
                     <label className="block">
-                        <span className="block text-sm font-medium text-slate-700">Nama</span>
+                        <span className="block text-sm font-medium text-slate-700">Tugas</span>
 
-                        <input placeholder='Masukkan nama' type="text" value={name} onChange={(e) => { handleNameChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        <input placeholder='Masukkan tugas' type="text" value={name} onChange={(e) => { handleNameChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                     invalid:border-pink-500 invalid:text-pink-600
                     focus:invalid:border-pink-500 focus:invalid:ring-pink-500
@@ -68,7 +68,7 @@ const Home = () => {
                     <label className="block mt-2">
                         <span className="block text-sm font-medium text-slate-700">Nomor</span>
 
-                        <input placeholder='Masukkan nomor hp' type="number" value={phone} onChange={(e) => { handlePhoneChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        <input placeholder='Masukkan Deadline' type="date" value={phone} onChange={(e) => { handlePhoneChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                     invalid:border-pink-500 invalid:text-pink-600
                     focus:invalid:border-pink-500 focus:invalid:ring-pink-500
@@ -80,7 +80,7 @@ const Home = () => {
                 </form>
 
                 <hr />
-                <h2 className="text-center mt-3">Data Kontak</h2>
+                <h2 className="text-center mt-3">Data Todolist</h2>
                 <div className="flex flex-col">
                     <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -92,10 +92,10 @@ const Home = () => {
                                                 #
                                             </th>
                                             <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Nama
+                                                Tugas
                                             </th>
                                             <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Nomor
+                                                Deadline
                                             </th>
                                             <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 Aksi

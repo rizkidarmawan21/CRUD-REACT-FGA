@@ -47,7 +47,7 @@ export const Edit = () => {
             <h1 className='text-lg font-bold my-5' >Halaman Edit</h1>
             <form onSubmit={(e) => { handleSubmit(e) }}>
                 <label className="block">
-                    <span className="block text-sm font-medium text-slate-700">Nama</span>
+                    <span className="block text-sm font-medium text-slate-700">Tugas</span>
 
                     <input type="text" value={name} onChange={(e) => { handleNameChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
@@ -56,9 +56,9 @@ export const Edit = () => {
                     "/>
                 </label>
                 <label className="block mt-2">
-                    <span className="block text-sm font-medium text-slate-700">Nomor</span>
+                    <span className="block text-sm font-medium text-slate-700">Edit</span>
 
-                    <input type="number" value={phone} onChange={(e) => { handlePhoneChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                    <input type="date" value={phone} onChange={(e) => { handlePhoneChange(e) }} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                     focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                     invalid:border-pink-500 invalid:text-pink-600
                     focus:invalid:border-pink-500 focus:invalid:ring-pink-500
